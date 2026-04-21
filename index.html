@@ -49,6 +49,20 @@
 </style>
 
 
+<script>
+const updateMeta = () => {
+  document.title = "Wedding Invitation - Praveen & Lucia";
+
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.setAttribute("content", "Join us to celebrate the wedding of Praveen & Lucia.");
+  }
+};
+
+// run multiple times (Framer override fix)
+setInterval(updateMeta, 500);
+</script>
+
 
 <style>
 /* Hide Buy Now button */
