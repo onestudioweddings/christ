@@ -16,9 +16,9 @@
   <!-- SnippetEnd: legacy-headStart-plugin-e4c361 -->
 
     <!-- Meta data -->
-  <title>Wedding Invitation - Praveen & Lucia</title>
+  <title>Wedding Invitation - Bency Shamili & Kavin</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Wedding Invitation - Praveen & Lucia">
+  <meta property="og:title" content="Wedding Invitation - Bency Shamili & Kavin">
   <meta property="og:description"
     content="Come join our wedding celebration!">
 
@@ -37,7 +37,7 @@
   <link rel="apple-touch-icon" href="https://framerusercontent.com/images/crQk5UzfRd9W9n54FdrUY2WUTU.png">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://praveenwedslucia.vercel.app//images/5-img.jpg">
+  <meta property="og:image" content="https://bencyshamiliwedskavin.vercel.app//images/5-img.jpg">
 
 
 
@@ -51,11 +51,11 @@
 
 <script>
 const updateMeta = () => {
-  document.title = "Wedding Invitation - Praveen & Lucia";
+  document.title = "Wedding Invitation - Bency Shamili & Kavin";
 
   let metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
-    metaDesc.setAttribute("content", "Join us to celebrate the wedding of Praveen & Lucia.");
+    metaDesc.setAttribute("content", "Join us to celebrate the wedding of Bency Shamili & Kavin.");
   }
 };
 
@@ -5632,6 +5632,67 @@ a[href="https://rzp.io/rzp/whimsical"] {
  <!-- groom names -->
 
 <script>
+const updateNames = () => {
+
+  const first = document.querySelector('[data-framer-name="Abhishek"] span[style*="white-space"]');
+  const second = document.querySelector('[data-framer-name="Kanika"] span[style*="white-space"]');
+
+  if (first && first.innerText !== "Bency") {
+    first.innerHTML = "Bency";
+  }
+
+  if (second && second.innerText !== "Kavin") {
+    second.innerHTML = "Kavin";
+  }
+
+};
+
+// run continuously (Framer fix)
+setInterval(updateNames, 500);
+</script>
+
+<script>
+const replaceNames = () => {
+
+  document.querySelectorAll('*').forEach(el => {
+
+    // ✅ Case 1: Normal text (Joshua / Vanessa)
+    if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+      let text = el.textContent;
+
+      if (text.includes("Joshua")) {
+        el.textContent = text.replace(/Joshua/g, "Bency");
+      }
+
+      if (text.includes("Vanessa")) {
+        el.textContent = el.textContent.replace(/Vanessa/g, "Kavin");
+      }
+    }
+
+    // ✅ Case 2: Animated letters (J o s h u a)
+    if (el.querySelector && el.querySelector('span[style*="inline-block"]')) {
+      const fullText = el.innerText;
+
+      if (fullText === "Joshua") {
+        el.innerHTML = "Bency";
+      }
+
+      if (fullText === "Vanessa") {
+        el.innerHTML = "Kavin";
+      }
+    }
+
+  });
+
+};
+
+// 🔁 Run multiple times (Framer async rendering fix)
+setInterval(replaceNames, 500);
+</script> 
+
+
+
+<script>
 const createAnimatedText = (text) => {
   return text.split("").map((char, i) => {
     return `<span style="
@@ -5648,8 +5709,8 @@ const applyNames = () => {
   const first = document.querySelector('[data-framer-name="Abhishek"] span[style*="white-space"]');
   const second = document.querySelector('[data-framer-name="Kanika"] span[style*="white-space"]');
 
-  if (first) first.innerHTML = createAnimatedText("Praveen");
-  if (second) second.innerHTML = createAnimatedText("Lucia");
+  if (first) first.innerHTML = createAnimatedText("Bency Shamili");
+  if (second) second.innerHTML = createAnimatedText("Kavin");
 };
 
 // run after render
@@ -5666,17 +5727,7 @@ setTimeout(applyNames, 1000);
 </style>
 
 
-<script>
-setTimeout(() => {
 
-  const first = document.querySelector('[data-framer-name="Aaditya"] .framer-text');
-  const second = document.querySelector('[data-framer-name="Veera"] .framer-text');
-
-  if (first) first.textContent = "Praveen";
-  if (second) second.textContent = "Lucia";
-
-}, 1000);
-</script>
 
 
 <script>
@@ -5684,7 +5735,7 @@ setTimeout(() => {
 
   document.querySelectorAll('.framer-text').forEach(el => {
     if (el.textContent.includes("Thomas and Mary")) {
-      el.textContent = "Mr. and Mrs. Justin and Illeana";
+      el.textContent = "Mrs. Annie Christi and Mr. Sundar L";
     }
   });
 
@@ -5696,7 +5747,7 @@ setTimeout(() => {
 
   document.querySelectorAll('.framer-text').forEach(el => {
     if (el.textContent.includes("Mirko Rastovic")) {
-      el.textContent = el.textContent.replace("Mirko Rastovic", "John Mario");
+      el.textContent = el.textContent.replace("Mirko Rastovic", "GanapathiKumar");
     }
   });
 
@@ -5710,7 +5761,7 @@ a.framer-styles-preset-thf6wm {
 }
 </style>
 
-
+<!-- google maps -->
 <script>
 setTimeout(() => {
 
@@ -5718,7 +5769,7 @@ setTimeout(() => {
   
   if (img) {
     const link = document.createElement("a");
-    link.href = "https://maps.google.com/";
+    link.href = "https://maps.app.goo.gl/6DCsqukGZu6qpDmx6";
     link.target = "_blank";
 
     img.parentNode.insertBefore(link, img);
@@ -5728,13 +5779,13 @@ setTimeout(() => {
 }, 1000);
 </script>
 
-
+<!-- whatsapp -->
 <script>
 setTimeout(() => {
 
   const link = document.querySelector('[data-framer-name="WhatsApp Icon"]');
   if (link) {
-    link.href = "https://google.com";
+    link.href = "https://wa.me/17057721535";
   }
 
 }, 1000);
@@ -5798,7 +5849,7 @@ setTimeout(() => {
 
   const link = document.querySelector('[data-framer-name="Instagram Icon"]');
   if (link) {
-    link.href = "https://www.instagram.com";
+    link.href = "https://www.instagram.com/kavin_n_g/";
   }
 
 }, 1000);
@@ -5850,6 +5901,173 @@ setTimeout(() => {
 }, 1000);
 </script>
 
+
+<!-- replace son daughter-->
+
+<script>
+setTimeout(() => {
+
+  document.querySelectorAll('.framer-text').forEach(el => {
+    if (el.textContent.trim() === "At the marriage of their son") {
+      el.textContent = "At the marriage of their daughter";
+    }
+  });
+
+}, 1000);
+</script>
+
+
+<script>
+setTimeout(() => {
+
+  const el = document.querySelector('[data-framer-name="Text 1"] .framer-text');
+  if (el) {
+    el.textContent = "Son of";
+  }
+
+}, 1000);
+</script>
+
+<script>
+setTimeout(() => {
+
+  document.querySelectorAll('.framer-text').forEach(el => {
+    const text = el.textContent.trim();
+
+    if (
+      text === "Welcome Party" ||
+      text === "Opera Night" ||
+      text === "Cocktail"
+    ) {
+      // hide entire card
+      let card = el.closest('[data-framer-name="Variant 1"]');
+      if (card) {
+        card.style.display = "none";
+      }
+    }
+  });
+
+}, 1000);
+</script>
+
+<!-- Update event details -->
+
+<script>
+setTimeout(() => {
+
+  document.querySelectorAll('[data-framer-name="Variant 1"]').forEach(card => {
+
+    const eventNameEl = card.querySelector('[data-framer-name="Event name"] .framer-text');
+    if (!eventNameEl) return;
+
+    const eventName = eventNameEl.textContent.trim();
+
+    // 🎯 CEREMONY UPDATE
+    if (eventName === "Ceremony") {
+
+      // Date
+      const date = card.querySelector('[data-framer-name="Date and day"] .framer-text');
+      if (date) date.textContent = "Wednesday, May 27th 2026";
+
+      // Venue
+      const venue = card.querySelector('[data-framer-name="Venue"] .framer-text');
+      if (venue) venue.textContent = "St. Anthonyy's Shrine, Coonoor";
+
+      // Time
+      const time = card.querySelector('[data-framer-name="Time"] .framer-text');
+      if (time) time.textContent = "3:00 PM";
+
+      // Attire
+      const attire = card.querySelector('[data-framer-name="Attire"] .framer-text');
+      if (attire) attire.textContent = "Traditional / Formal";
+
+    }
+
+    // 🎯 RECEPTION UPDATE
+    if (eventName === "Reception") {
+
+      const date = card.querySelector('[data-framer-name="Date and day"] .framer-text');
+      if (date) date.textContent = "Wednesday, May 27th 2026";
+
+      const venue = card.querySelector('[data-framer-name="Venue"] .framer-text');
+      if (venue) venue.textContent = "Orange Grove Road, Coonoor";
+
+      const time = card.querySelector('[data-framer-name="Time"] .framer-text');
+      if (time) time.textContent = "5:30 PM to 8:30 PM";
+
+      const attire = card.querySelector('[data-framer-name="Attire"] .framer-text');
+      if (attire) attire.textContent = "Evening Formal";
+
+    }
+
+  });
+
+}, 1000);
+</script>
+
+<!-- countdown timer -->
+<script>
+(function () {
+
+  const targetDate = new Date("May 27, 2026 15:00:00").getTime();
+
+  function format(diff) {
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    return (
+      String(d).padStart(2, "0") + ":" +
+      String(h).padStart(2, "0") + ":" +
+      String(m).padStart(2, "0") + ":" +
+      String(s).padStart(2, "0")
+    );
+  }
+
+  function startCounter(el) {
+
+    if (el.dataset.running) return; // prevent duplicate
+    el.dataset.running = "true";
+
+    function update() {
+      const now = Date.now();
+      const diff = targetDate - now;
+      el.innerText = format(diff > 0 ? diff : 0);
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  function findCounter() {
+    document.querySelectorAll("p").forEach(p => {
+
+      const text = p.innerText.trim();
+
+      // 🔥 flexible match
+      if (/^\d{2}:\d{2}:\d{2}:\d{2}$/.test(text) || text.includes("00:00")) {
+        startCounter(p);
+      }
+
+    });
+  }
+
+  // run multiple times
+  setTimeout(findCounter, 500);
+  setTimeout(findCounter, 1500);
+  setTimeout(findCounter, 3000);
+
+  // observe dynamic rendering
+  const observer = new MutationObserver(findCounter);
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+})();
+</script>
 
   <div id="main"
     data-framer-hydrate-v2="{&quot;routeId&quot;:&quot;UDi18XZOt&quot;,&quot;localeId&quot;:&quot;default&quot;,&quot;breakpoints&quot;:[{&quot;hash&quot;:&quot;1457vnl&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1200px)&quot;},{&quot;hash&quot;:&quot;9mx1vi&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1199.98px)&quot;},{&quot;hash&quot;:&quot;f4nmex&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;}]}"
@@ -9726,6 +9944,8 @@ document.addEventListener("keydown", function (e) {
 
 });
 </script>
+
+    
   <!-- Start of bodyEnd -->
 
   <!-- End of bodyEnd -->
