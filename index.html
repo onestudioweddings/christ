@@ -5631,64 +5631,29 @@ a[href="https://rzp.io/rzp/whimsical"] {
 
  <!-- groom names -->
 
+
+
 <script>
 const updateNames = () => {
 
-  const first = document.querySelector('[data-framer-name="Abhishek"] span[style*="white-space"]');
-  const second = document.querySelector('[data-framer-name="Kanika"] span[style*="white-space"]');
+  const container = document.querySelector('.framer-1c04gtd-container');
+  if (!container) return;
 
-  if (first && first.innerText !== "Bency") {
-    first.innerHTML = "Bency";
+  const first = container.querySelector('[data-framer-name="Aaditya"] .framer-text');
+  const second = container.querySelector('[data-framer-name="Veera"] .framer-text');
+
+  if (first && first.textContent !== "Bency") {
+    first.textContent = "Bency";
   }
 
-  if (second && second.innerText !== "Kavin") {
-    second.innerHTML = "Kavin";
+  if (second && second.textContent !== "Kavin") {
+    second.textContent = "Kavin";
   }
-
 };
 
-// run continuously (Framer fix)
+// run repeatedly (handles Framer async rendering)
 setInterval(updateNames, 500);
 </script>
-
-<script>
-const replaceNames = () => {
-
-  document.querySelectorAll('*').forEach(el => {
-
-    // ✅ Case 1: Normal text (Joshua / Vanessa)
-    if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-      let text = el.textContent;
-
-      if (text.includes("Joshua")) {
-        el.textContent = text.replace(/Joshua/g, "Bency");
-      }
-
-      if (text.includes("Vanessa")) {
-        el.textContent = el.textContent.replace(/Vanessa/g, "Kavin");
-      }
-    }
-
-    // ✅ Case 2: Animated letters (J o s h u a)
-    if (el.querySelector && el.querySelector('span[style*="inline-block"]')) {
-      const fullText = el.innerText;
-
-      if (fullText === "Joshua") {
-        el.innerHTML = "Bency";
-      }
-
-      if (fullText === "Vanessa") {
-        el.innerHTML = "Kavin";
-      }
-    }
-
-  });
-
-};
-
-// 🔁 Run multiple times (Framer async rendering fix)
-setInterval(replaceNames, 500);
-</script> 
 
 
 
@@ -5709,7 +5674,7 @@ const applyNames = () => {
   const first = document.querySelector('[data-framer-name="Abhishek"] span[style*="white-space"]');
   const second = document.querySelector('[data-framer-name="Kanika"] span[style*="white-space"]');
 
-  if (first) first.innerHTML = createAnimatedText("Bency Shamili");
+  if (first) first.innerHTML = createAnimatedText("Bency");
   if (second) second.innerHTML = createAnimatedText("Kavin");
 };
 
@@ -9912,7 +9877,7 @@ setTimeout(() => {
 
   <script>
 // Disable right click
-document.addEventListener("contextmenu", e => e.preventDefault());
+// document.addEventListener("contextmenu", e => e.preventDefault());
 
 // Disable key shortcuts
 document.addEventListener("keydown", function (e) {
